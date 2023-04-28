@@ -10,6 +10,7 @@
     <!-- Task list items -->
     <div class="task-list">
         <div v-for="task in taskStore.tasks">
+          <TaskDetails :task="task"/>
           
         </div>
     </div>

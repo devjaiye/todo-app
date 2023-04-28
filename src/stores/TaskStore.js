@@ -6,5 +6,6 @@ import { defineStore } from "pinia";
             {id: 1, title: "Birthday Party", isFav: true }, 
             {id: 2, title: "Concert", isFav: false }
         ], 
-    }) 
+    }), 
+     
   })
