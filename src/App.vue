@@ -7,6 +7,11 @@
       <h1>Todo</h1>
     </header>
 
+    <!-- add task form -->
+      <div class="new-task-form">
+        <TaskForm />
+      </div>
+
     <!-- filter toggle -->
     <nav class="filter">
        <button @click="filter = 'all'">All Tasks</button>
@@ -35,9 +40,10 @@
   import {ref} from 'vue'
   import {useTaskStore} from './stores/TaskStore.js'
   import TaskDetails from './components/TaskDetails.vue'
+import TaskForm from './components/TaskForm.vue'
 
   export default {
-    components: {TaskDetails},
+    components: { TaskDetails, TaskForm },
     setup(){
       const taskStore = useTaskStore()
       const filter = ref('all')
