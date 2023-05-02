@@ -49,7 +49,7 @@ import { defineStore } from "pinia";
         }, 
        async deleteTask(id){
             this.tasks = this.tasks.filter(t => {
-                return t.id == id
+                return t.id !== id
             })
 
             const res = await fetch('http://localhost:3000/tasks/' + id, {
@@ -65,7 +65,7 @@ import { defineStore } from "pinia";
             const task = this.tasks.find(t => t.id === id)
             task.isFav = !task.isFav
 
-            const res = await fetch('http://localhost:3000/tasks', {
+            const res = await fetch('http://localhost:3000/tasks/' + id, {
                 method: 'PATCH',
                 body: JSON.stringify({isFav: task.isFav}), 
                 headers: {'Content-Type': 'application/json'}

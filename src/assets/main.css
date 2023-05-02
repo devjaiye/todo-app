@@ -19,7 +19,7 @@ header {
   align-items: center;
 }
 header img {
-  max-width: 60px;
+  max-width: 80px;
   transform: rotate(-10deg);
 }
 header h1 {

@@ -3,7 +3,7 @@
 
     <!-- heading -->
     <header>
-      <img src="https://pinia.vuejs.org/logo.svg" alt="pinia logo">
+      <img src="./assets/task.png" alt="pinia logo">
       <h1>Todo</h1>
     </header>
 
@@ -19,26 +19,26 @@
     </nav>
 
     <div class="loading" v-if="loading">
-      <p>Loading tasks...</p>
+      Loading tasks...
     </div>
 
     <!-- Task list items -->
     <div class="task-list" v-if="filter === 'all'">
         <p> You have {{totalCount}} task(s) left</p>
-        <div v-for="task in tasks">
-          <TaskDetails :task="task"/>
+        <div v-for="task in tasks" :key="task.id">
+          <TaskDetails :task="task" />
         </div>
     </div>
 
     <div class="task-list" v-if="filter === 'favs'">
       <p>You have {{ favCount }} favorite to do</p>
-      <div v-for="task in favs">
-        <TaskDetails :task="task" />
+      <div v-for="task in favs" :key="task.id">
+        <TaskDetails :task="task"/>
       </div>
     </div>
 
-    <button @click="taskStore.$reset">Reset </button>
-
+    <!-- <button @click="taskStore.$reset">Reset </button> -->
+    
   </main>
 </template>
 
